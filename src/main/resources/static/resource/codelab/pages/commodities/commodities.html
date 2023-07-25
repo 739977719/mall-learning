@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>商品台账管理系统</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+</head>
+
+<body>
+  <div class="layuimini-container">
+    <div class="layuimini-main">
+
+        <fieldset class="table-search-fieldset">
+            <legend>搜索信息</legend>
+            <div>
+                <form class="layui-form layui-form-pane" action="">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">商品编号</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="id" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">商品名称</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="commoditiesName" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">商品类别</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="category" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">商品价格</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="price" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">库存数量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="inventory" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                          <label class="layui-form-label">操作用户</label>
+                          <div class="layui-input-inline">
+                              <input type="text" name="createdByName" autocomplete="off" class="layui-input">
+                          </div>
+                        </div>
+                        <div class="layui-inline">
+                          <label class="layui-form-label">用户编号</label>
+                          <div class="layui-input-inline">
+                              <input type="text" name="createdById" autocomplete="off" class="layui-input">
+                          </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">开始日期</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="beginDate" id="createDateBegin" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">结束日期</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="endDate" id="createDateEnd" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <button type="submit" class="layui-btn layui-btn-normal" lay-submit lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索</button>
+                        </div>
+                        <div class="layui-inline">
+                        <button type="button" class="layui-btn" onclick="openAddCommoditiesLayer()">上架商品</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+
+        <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+        <script type="text/html" id="actionButtonsTpl">
+            <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="remove">下架</a>
+        </script>
+
+    </div>
+</div>
+<script src="../../lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="../../lib/layui-v2.6.8/layui/layui.js" charset="utf-8"></script>
+<script src="../../frame/js/lay-config.js" charset="utf-8"></script>
+<script src="../../js/lay-config-cl.js" charset="utf-8"></script>
+<script src="../../js/pages/commodities/Commodities.js" charset="utf-8"></script>
+<script src="../../js/pages/commodities/openAddCommoditiesLayer.js" charset="utf-8"></script>
+</body>

@@ -1,0 +1,54 @@
+GET http://localhost:15055/dz-ftsp/codelab/product/page
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-23T134755.200.json
+
+###
+
+GET http://localhost:15055/dz-ftsp/codelab/product/page
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-23T132016.200.json
+
+###
+
+GET http://localhost:15055/dz-ftsp/codelab/product/page
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-23T131318.200.json
+
+###
+
+GET http://localhost:15055/dz-ftsp/codelab/product/page
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-23T131313.200.json
+
+###
+
+GET http://localhost:15055/dz-ftsp/codelab/product/page
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-22T224431.200.json
+
+###
+
+GET http://localhost:15055/dz-ftsp/codelab/user/add
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-07-22T224218.500.json
+
+###
+

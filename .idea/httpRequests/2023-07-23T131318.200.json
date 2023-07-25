@@ -1,0 +1,14 @@
+{
+  "errorNo": 0,
+  "errorInfo": "调用成功",
+  "resultType": "list",
+  "result": [
+    {
+      "pId": 1,
+      "pDescription": "真边陲",
+      "pImage": "D:\\work\\codelab\\fe188885-012f-44e1-b8be-99a3480f8757.png",
+      "pCId": 1
+    }
+  ],
+  "page": false
+}

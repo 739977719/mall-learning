@@ -1,0 +1,27 @@
+server:
+  port: 15055
+spring:
+  application:
+    name: dz-ftsp-codelab
+  main:
+    allow-bean-definition-overriding: true
+mybatis:
+  mapper-locations:
+    - classpath:com/dz/ftsp/codelab/dao/*/xml/*.xml
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring-test.xml
+logback:
+  logdir: E:/log/dz-ftsp
+dzconfig:
+  datasource:
+    codelab:
+      driver: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://localhost:3306/dz_codelab?serverTimezone=Asia/Shanghai&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+      username: dz_stdev
+      password: dz_stdev
+devtools:
+  restart:
+    enabled: true
+    addition-paths: src/main/java

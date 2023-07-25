@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dz.ftsp.codelab.dao.cl.TClCategoryMapper">
+
+    <resultMap type="com.dz.ftsp.codelab.model.cl.TClCategory" id="tClCategoryMap">
+        <result property="cId" column="c_id"/>
+        <result property="cName" column="c_name"/>
+    </resultMap>
+    
+    <sql id="Base_Sql">
+        c_id,c_name
+    </sql>
+    
+    <select id="getAll" resultMap="tClCategoryMap">
+    select
+    <include refid="Base_Sql"/>
+    from t_cl_category
+    </select>
+
+
+</mapper>

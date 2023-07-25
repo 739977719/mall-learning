@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../css/layui.css" media="all">
+    <script src="../../lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+    <script src="../../lib/layui-v2.6.8/layui/layui.js" charset="utf-8"></script>
+    <script src="../../frame/js/lay-config.js" charset="utf-8"></script>
+    <script src="../../js/lay-config-cl.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div style="padding: 20px;"> 
+    <form class="layui-form"> 
+      <div class="layui-form-item"> 
+        <label class="layui-form-label">商品编号</label> 
+        <div class="layui-input-block"> 
+          <input type="text" id="idInput" name="idInput" readonly placeholder="" autocomplete="off" class="layui-input" cursor="copy" style="background-color: #f2f2f2;"> 
+        </div> 
+      </div> 
+      <div class="layui-form-item"> 
+        <label class="layui-form-label">商品名称</label> 
+        <div class="layui-input-block"> 
+          <input type="text" name="commoditiesName" required lay-verify="required" placeholder="请输入商品名称" autocomplete="off" class="layui-input"> 
+        </div> 
+      </div> 
+      <div class="layui-form-item"> 
+        <label class="layui-form-label">商品类别</label> 
+        <div class="layui-input-block"> 
+          <input type="text" name="category" required lay-verify="required" placeholder="请输入商品类别" autocomplete="off" class="layui-input"> 
+        </div> 
+      </div> 
+      <div class="layui-form-item"> 
+        <label class="layui-form-label">商品价格</label> 
+        <div class="layui-input-block"> 
+          <input type="text" name="price" required lay-verify="required" placeholder="请输入商品价格" autocomplete="off" class="layui-input"> 
+        </div> 
+      </div> 
+      <div class="layui-form-item"> 
+        <label class="layui-form-label">库存数量</label> 
+        <div class="layui-input-block"> 
+          <input type="text" name="inventory" required lay-verify="required" placeholder="请输入库存数量" autocomplete="off" class="layui-input"> 
+        </div>
+      </div> 
+      <div class="layui-form-item"> 
+        <div class="layui-input-block"> 
+          <button class="layui-btn" lay-submit lay-filter="addCommoddities">提交</button>  
+        </div>
+      </div>
+
+    </form> 
+    </div>
+    <script src="../../js/pages/commodities/addCommodities.js"></script> 
+    
+
+</body>
+</html>

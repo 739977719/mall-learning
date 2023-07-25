@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dz.ftsp.codelab.dao.cl.TClCommoditiesExMapper">
+  <select id="getLatestId" resultType="java.lang.Long">
+    select MAX(id) from t_cl_commodities;
+  </select>
+  <select id="countByCommoditiesName" resultType="java.lang.Integer" parameterType="java.lang.String">
+    SELECT COUNT(*) FROM t_cl_commodities WHERE commodities_name = #{commoditiesName};
+  </select>
+
+  <select id="purchaseCommodities" resultType="java.lang.Long" parameterType="java.lang.Long">
+    SELECT inventory FROM t_cl_commodities WHERE id = #{id}
+  </select>
+
+  <update id="updateInventory" parameterType="com.dz.ftsp.codelab.model.cl.TClCommodities">
+    UPDATE t_cl_commodities SET inventory = #{newInventory} WHERE id = #{id}
+  </update>
+</mapper>

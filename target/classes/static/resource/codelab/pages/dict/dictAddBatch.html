@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <link rel="stylesheet" href="../../css/public-cl.css" media="all">
+</head>
+<body class="layui-bg-white">
+<div class="layui-form layuimini-form" id="common-form" lay-filter="commonForm">
+    <div class="layui-form-item layui-hide">
+        <div class="layui-input-inline">
+            <input type="text" name="nodePath" value="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">父节点</label>
+        <div class="layui-input-block">
+            <span id="nodeValue" class="cl-form-text"></span>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">父路径</label>
+        <div class="layui-input-block">
+            <span id="nodePath" class="cl-form-text"></span>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">新增节点</label>
+        <div class="layui-input-block">
+            <table class="layui-hide" id="nodesTableId" lay-filter="nodesTableFilter"></table>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="saveBtn">确认提交</button>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="nodesHeaderBar">
+    <div class="layui-btn-container">
+        <button class="layui-btn" lay-event="add"><i class="fa fa-plus"></i></button>
+    </div>
+</script>
+<script type="text/html" id="nodesOperateBar">
+    <span class="row-oper" lay-event="delete"><i class="fa fa-close text-danger" title="删除"></i></span>
+</script>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="../../../frame/js/lay-config.js?v=1.0.0" charset="utf-8"></script>
+<script src="../../js/lay-config-cl.js?v=1.0.0" charset="utf-8"></script>
+<script src="../../js/pages/dict/dictAddBatch.js"></script>
+</body>
+</html>

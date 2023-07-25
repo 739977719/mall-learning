@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>东莞证券|金融科技服务平台</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+
+        <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+
+        <script type="text/html" id="headerToolbar">
+            <div class="layui-btn-container">
+                <button class="layui-btn data-add-btn" lay-event="add" data-btn-code="stest-base-indexinfo:add">新 增</button>
+            </div>
+        </script>
+        <script type="text/html" id="switchTpl">
+            <input id="checkDel" type="checkbox" name="Show" value="{{d.delFlag}}" lay-skin="switch" lay-text="启用|停用" {{ d.delFlag=="0"?"checked":"" }} disabled lay-filter="delFlag" />
+        </script>
+        <script type="text/html" id="currentTableBar">
+            <span class="row-oper" lay-event="update" data-btn-code="st-base-riskfactor:update"><i class="fa fa-edit text-warning" title="修改"></i></span>
+            {{# if (d.delFlag != 1) { }}
+            <span class="row-oper" lay-event="delete" data-btn-code="st-base-riskfactor:delete"><i class="fa fa-close text-danger" title="删除"></i></span>
+            {{# } }}
+        </script>
+    </div>
+</div>
+<script src="../../lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<!-- <script src="../../../frame/js/lay-config.js?v=1.0.0" charset="utf-8"></script> -->
+<script src="../../frame/js/lay-config.js?v=1.0.0" charset="utf-8"></script>
+<script src="../../js/lay-config-stest.js?v=1.0.0" charset="utf-8"></script>
+<script src="../../lib/moment-2.26.0/moment.js" charset="utf-8"></script>
+<script src="../../js/pages/riskfactor/riskFactor.js" charset="utf-8"></script>
+</body>
+</html>

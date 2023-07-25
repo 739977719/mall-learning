@@ -1,0 +1,57 @@
+.cl-form-text {
+    padding: 10px;
+    line-height: 38px;
+    color: #777777;
+}
+
+.cl-form-text-black {
+    padding: 10px;
+    line-height: 38px;
+    color: #000;
+}
+
+.layui-input-inline.cl-input-inline-ul {
+    width: 450px;
+}
+
+.layui-input-inline.cl-input-inline-sign {
+    width: 410px;
+}
+
+.layui-input-inline.cl-input-select-md {
+    width: 400px;
+}
+
+.cl-ul-list.layui-transfer-data li:hover {
+    background-color: #a7a7a7;
+}
+
+.cl-ul-list .layui-transfer-active {
+    background-color: #a7a7a7;
+}
+
+.cl-ul-list {
+    line-height: 38px;
+    background-color: #f7f7f7;
+}
+
+.cl-calculator-panel {
+    padding: 10px;
+    line-height: 44px;
+}
+
+.cl-calculator-btn {
+    height: 38px;
+    line-height: 38px;
+    padding: 0 25px;
+    font-size: 14px;
+}
+
+.cl-riskterm-btn {
+    margin: 4px 10px;
+    width: 120px;
+}
+
+.cl-risk-container {
+    width: 800px;
+}

@@ -1,0 +1,59 @@
+
+/*头部右侧背景色 headerRightBg */
+.layui-layout-admin .layui-header {
+    background-color: #243346 !important;
+}
+/*头部菜单*/
+.layui-layout-left.layui-nav .layui-nav-item {
+    margin: 0 5px;
+}
+.layui-header .layuimini-header-content > ul > .layui-nav-item.layui-this, .layuimini-tool i:hover {
+    background-color: #243346 !important;
+}
+.layui-nav-item.layui-this:after {
+    width: 100% !important;
+    height: 5px !important;
+    background-color: #1E9FFF;
+}
+/*
+.layui-layout-left.layui-nav .layui-nav-item * {
+    font-size: 16px !important;
+    color: #fff;
+    background: #243346;
+}
+*/
+.layui-nav .layui-nav-child a:hover {
+    background-color: #1E9FFF;
+    color: #fff;
+}
+/*
+.layui-nav .layui-nav-child a:hover i, .layui-nav .layui-nav-child a:hover span{
+    background-color: #1E9FFF;
+}*/
+
+
+.layuimini-tool i {
+    color: #fff;
+}
+
+/*左侧树状菜单*/
+.layui-layout-admin .layui-nav-tree .layui-this, .layui-layout-admin .layui-nav-tree .layui-this > a,
+.layui-layout-admin .layui-nav-tree .layui-nav-child dd.layui-this,
+.layui-layout-admin .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #1E9FFF !important;
+ }
+
+ .layui-layout-body .layuimini-menu-left .layui-nav .layui-nav-itemed > .layui-nav-child {
+    padding: 0;
+ }
+ .layui-nav-tree .layui-nav-child a{
+    color: #fff;
+ }
+
+ /*tab*/
+ .layuimini-tab .layui-tab-title span {
+    color: #999;
+ }
+ .layuimini-tab .layui-tab-title .layui-this .layuimini-tab-active {
+    background-color: #1E9FFF;
+ }

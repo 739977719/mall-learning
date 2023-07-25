@@ -1,0 +1,46 @@
+swagger:
+  active: true
+server:
+  port: 15055
+spring:
+  thymeleaf:
+    cache: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+      enabled: true
+  application:
+    name: dz-ftsp-codelab
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    date-format: yyyy-MM-dd
+mybatis:
+  mapper-locations:
+    - classpath:com/dz/ftsp/codelab/dao/*/xml/*.xml
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring-test.xml
+#logback:
+#  logdir: D:/log/dz-ftsp
+dzconfig:
+  datasource:
+    codelab:
+      driver: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://localhost:3306/dz_codelab?serverTimezone=Asia/Shanghai&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: 7595
+devtools:
+  restart:
+    enabled: true
+    addition-paths: src/main/java
+
+dz:
+  ftsp:
+    st:
+      upload:
+        group-name: group2

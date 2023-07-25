@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dz.ftsp.codelab.dao.cl.TClCommoditiesTransactionMapper">
+  <resultMap id="BaseResultMap" type="com.dz.ftsp.codelab.model.cl.TClCommoditiesTransaction">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="commodities_id" jdbcType="BIGINT" property="commoditiesId" />
+    <result column="commodities_name" jdbcType="VARCHAR" property="commoditiesName" />
+    <result column="transaction_date" jdbcType="TIMESTAMP" property="transactionDate" />
+    <result column="transaction_amount" jdbcType="DECIMAL" property="transactionAmount" />
+    <result column="quantity" jdbcType="BIGINT" property="quantity" />
+    <result column="buyer_id" jdbcType="VARCHAR" property="buyerId" />
+    <result column="seller_id" jdbcType="VARCHAR" property="sellerId" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, commodities_id, commodities_name, transaction_date, transaction_amount, quantity, 
+    buyer_id, seller_id, notes
+  </sql>
+  <select id="selectByExample" parameterType="com.dz.ftsp.codelab.model.cl.TClCommoditiesTransactionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_cl_commodities_transaction
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cl_commodities_transaction
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_cl_commodities_transaction
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.dz.ftsp.codelab.model.cl.TClCommoditiesTransactionExample">
+    delete from t_cl_commodities_transaction
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.dz.ftsp.codelab.model.cl.TClCommoditiesTransaction">
+    insert into t_cl_commodities_transaction (id, commodities_id, commodities_name, 
+      transaction_date, transaction_amount, quantity, 
+      buyer_id, seller_id, notes
+      )
+    values (#{id,jdbcType=BIGINT}, #{commoditiesId,jdbcType=BIGINT}, #{commoditiesName,jdbcType=VARCHAR}, 
+      #{transactionDate,jdbcType=TIMESTAMP}, #{transactionAmount,jdbcType=DECIMAL}, #{quantity,jdbcType=BIGINT}, 
+      #{buyerId,jdbcType=VARCHAR}, #{sellerId,jdbcType=VARCHAR}, #{notes,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.dz.ftsp.codelab.model.cl.TClCommoditiesTransaction">
+    insert into t_cl_commodities_transaction
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="commoditiesId != null">
+        commodities_id,
+      </if>
+      <if test="commoditiesName != null">
+        commodities_name,
+      </if>
+      <if test="transactionDate != null">
+        transaction_date,
+      </if>
+      <if test="transactionAmount != null">
+        transaction_amount,
+      </if>
+      <if test="quantity != null">
+        quantity,
+      </if>
+      <if test="buyerId != null">
+        buyer_id,
+      </if>
+      <if test="sellerId != null">
+        seller_id,
+      </if>
+      <if test="notes != null">
+        notes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="commoditiesId != null">
+        #{commoditiesId,jdbcType=BIGINT},
+      </if>
+      <if test="commoditiesName != null">
+        #{commoditiesName,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionDate != null">
+        #{transactionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transactionAmount != null">
+        #{transactionAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=BIGINT},
+      </if>
+      <if test="buyerId != null">
+        #{buyerId,jdbcType=VARCHAR},
+      </if>
+      <if test="sellerId != null">
+        #{sellerId,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null">
+        #{notes,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dz.ftsp.codelab.model.cl.TClCommoditiesTransactionExample" resultType="java.lang.Long">
+    select count(*) from t_cl_commodities_transaction
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <select id="getSaleOne" resultMap="BaseResultMap">
+   SELECT
+   SUM(transaction_amount * quantity) as transaction_amount ,commodities_id,commodities_name
+   FROM `t_cl_commodities_transaction`
+   WHERE
+    DATE_format(transaction_date, '%Y-%m') = DATE_FORMAT(NOW(), '%Y-%m')
+   GROUP BY commodities_id, commodities_name
+    ORDER BY transaction_amount DESC LIMIT 1
+  </select>
+  <select id="selectByDailySale" resultMap="BaseResultMap">
+    SELECT
+    commodities_id,
+    commodities_name,
+	SUM(transaction_amount * quantity) as transaction_amount,
+	DATE_format(transaction_date, '%Y-%m-%d') transaction_date
+    FROM
+    t_cl_commodities_transaction
+    WHERE
+    transaction_date &gt;=#{startDate} and transaction_date &lt;=#{endDate}
+    GROUP BY DATE_Format(transaction_date, '%Y-%m-%d'),commodities_id,commodities_name
+  </select>
+    <select id="selectByInfoDate" resultMap="BaseResultMap">
+         select commodities_id, commodities_name, transaction_date, transaction_amount, quantity, buyer_id, seller_id
+         from t_cl_commodities_transaction
+         WHERE
+         <if test="commoditiesName != null and commoditiesName !=''">
+         commodities_name = #{commoditiesName} and
+         </if>
+         (transaction_date &gt;=#{startDate} and transaction_date &lt;=#{endDate} )
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+    update t_cl_commodities_transaction
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.commoditiesId != null">
+        commodities_id = #{record.commoditiesId,jdbcType=BIGINT},
+      </if>
+      <if test="record.commoditiesName != null">
+        commodities_name = #{record.commoditiesName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transactionDate != null">
+        transaction_date = #{record.transactionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.transactionAmount != null">
+        transaction_amount = #{record.transactionAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.quantity != null">
+        quantity = #{record.quantity,jdbcType=BIGINT},
+      </if>
+      <if test="record.buyerId != null">
+        buyer_id = #{record.buyerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sellerId != null">
+        seller_id = #{record.sellerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.notes != null">
+        notes = #{record.notes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_cl_commodities_transaction
+    set id = #{record.id,jdbcType=BIGINT},
+      commodities_id = #{record.commoditiesId,jdbcType=BIGINT},
+      commodities_name = #{record.commoditiesName,jdbcType=VARCHAR},
+      transaction_date = #{record.transactionDate,jdbcType=TIMESTAMP},
+      transaction_amount = #{record.transactionAmount,jdbcType=DECIMAL},
+      quantity = #{record.quantity,jdbcType=BIGINT},
+      buyer_id = #{record.buyerId,jdbcType=VARCHAR},
+      seller_id = #{record.sellerId,jdbcType=VARCHAR},
+      notes = #{record.notes,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dz.ftsp.codelab.model.cl.TClCommoditiesTransaction">
+    update t_cl_commodities_transaction
+    <set>
+      <if test="commoditiesId != null">
+        commodities_id = #{commoditiesId,jdbcType=BIGINT},
+      </if>
+      <if test="commoditiesName != null">
+        commodities_name = #{commoditiesName,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionDate != null">
+        transaction_date = #{transactionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transactionAmount != null">
+        transaction_amount = #{transactionAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="quantity != null">
+        quantity = #{quantity,jdbcType=BIGINT},
+      </if>
+      <if test="buyerId != null">
+        buyer_id = #{buyerId,jdbcType=VARCHAR},
+      </if>
+      <if test="sellerId != null">
+        seller_id = #{sellerId,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null">
+        notes = #{notes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dz.ftsp.codelab.model.cl.TClCommoditiesTransaction">
+    update t_cl_commodities_transaction
+    set commodities_id = #{commoditiesId,jdbcType=BIGINT},
+      commodities_name = #{commoditiesName,jdbcType=VARCHAR},
+      transaction_date = #{transactionDate,jdbcType=TIMESTAMP},
+      transaction_amount = #{transactionAmount,jdbcType=DECIMAL},
+      quantity = #{quantity,jdbcType=BIGINT},
+      buyer_id = #{buyerId,jdbcType=VARCHAR},
+      seller_id = #{sellerId,jdbcType=VARCHAR},
+      notes = #{notes,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

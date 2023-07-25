@@ -1,0 +1,16 @@
+{
+  "errorNo": 0,
+  "errorInfo": "调用成功",
+  "resultType": "object",
+  "result": {
+    "id": null,
+    "commoditiesId": null,
+    "commoditiesName": "香蕉",
+    "transactionDate": null,
+    "transactionAmount": null,
+    "quantity": null,
+    "buyerId": null,
+    "sellerId": null,
+    "notes": "17200.00"
+  }
+}

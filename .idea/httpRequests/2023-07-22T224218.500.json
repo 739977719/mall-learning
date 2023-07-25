@@ -1,0 +1,7 @@
+{
+  "timestamp": "2023-07-22 14:42:18",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "",
+  "path": "/dz-ftsp/codelab/user/add"
+}

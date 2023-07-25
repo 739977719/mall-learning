@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dz.ftsp.codelab.dao.cl.TClProductMapper">
+
+    <resultMap type="com.dz.ftsp.codelab.model.cl.TClProduct" id="tClProductMap">
+        <result property="pId" column="p_id"/>
+        <result property="pDescription" column="p_description"/>
+        <result property="pCId" column="p_c_id"/>
+        <result property="pImage" column="p_image"/>
+    </resultMap>
+
+    <sql id="Base_Sql">
+       p_id,p_description,p_image,p_c_id
+    </sql>
+
+    <select id="getById"  resultMap="tClProductMap" parameterType="long">
+    select
+    <include refid="Base_Sql"/>
+    from t_cl_product
+    where
+    p_c_id = #{id}
+    </select>
+
+    <select id="getAllProduct" resultMap="tClProductMap">
+        SELECT
+        <include refid="Base_Sql"/>
+         FROM t_cl_product
+    </select>
+
+
+</mapper>
